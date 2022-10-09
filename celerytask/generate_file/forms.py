@@ -5,6 +5,7 @@ class CSVForm(forms.ModelForm):
     class Meta:
         model= Datas
         fields = [
+            # 'celery_id',
             'file_name',
             'count'
         ]
