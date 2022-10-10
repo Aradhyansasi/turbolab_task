@@ -3,6 +3,6 @@ from django.urls import path
 from generate_file import views
 
 
-urlpatterns = [
-    path('csv/', views.create_view),
-]
+# urlpatterns = [
+#     path('csv/', views.create_view),
+# ]

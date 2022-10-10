@@ -2,10 +2,8 @@ from django.contrib import admin
 from . import models
 
 # Register your models here.
-class CreateCsvAdmin(admin.AdminSite):
-    site_header = 'Create CSV Admin'
+class CreateCsvAdmin(admin.ModelAdmin):
+    fields = ['file_name' , 'count']
 
+admin.site.register(models.Datas, CreateCsvAdmin)
 
-create_file = CreateCsvAdmin(name='CreateAdmin')
-
-create_file.register(models.Datas)

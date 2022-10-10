@@ -1,5 +1,7 @@
 from django.db import models
 
+from celerytask.tasks import generate_csv
+
 # Create your models here.
 
 class Datas(models.Model):
@@ -10,5 +12,6 @@ class Datas(models.Model):
     def __str__(self):
         return self.file_name
 
-    # def save(self , *args, **kwargs):
-    #     print(data , 'data')
+    def save(self , *args, **kwargs):
+        generate_csv.delay(self.file_name , self.count)
+        super(Datas, self).save(*args , **kwargs)

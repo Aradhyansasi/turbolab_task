@@ -16,9 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 # from celerytask import generate_file
-from generate_file.admin import create_file
+# from generate_file.admin import create_file
 
 urlpatterns = [
-    path('admin/', create_file.urls),
-    path('form/' , include('generate_file.urls'))
+    path('admin/' ,  admin.site.urls),
+    # path('form/' , include('generate_file.urls'))
 ]
