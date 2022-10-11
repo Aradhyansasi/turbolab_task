@@ -6,7 +6,7 @@ from django.conf import settings
 
 # setting the Django settings module.
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'celerytask.settings')
-app = Celery('celerytask')
+app = Celery('celerytask' , backend="amqp://localhost:5672//" , broker="amqp://localhost:5672//")
 app.config_from_object('django.conf:settings')
 
 # Looks up for task modules in Django applications and loads them
