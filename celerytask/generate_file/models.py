@@ -8,7 +8,7 @@ from celerytask.tasks import  generate_file
 class Datas(models.Model):
     celery_id = models.CharField(max_length=100 , default="0")
     file_name = models.CharField(max_length=100)
-    count = models.CharField(max_length=100)
+    count = models.IntegerField()
     status = models.CharField(max_length = 150 , default="Pending")
 
     def __str__(self):
