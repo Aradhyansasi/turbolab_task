@@ -19,9 +19,4 @@ class Datas(models.Model):
         self.celery_id = id.task_id
         self.status = id.status
         super(Datas, self).save(*args , **kwargs)
-    
-    @classmethod
-    def update_status(celery_id , status):
-        item = Datas.objects.get(celery_id = celery_id)
-        item.status = status
-        item.save()
+
