@@ -1,4 +1,3 @@
 from .celery import app as celery_app
-
-
-_all__ = ['celery_app']
+from .log import setup_event_listening
+setup_event_listening(celery_app)
