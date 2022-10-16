@@ -6,7 +6,7 @@ from celerytask.celery import app
 from time import sleep
 
 @app.task(bind=True)
-def generate_csv(self, name, total):
+def generate_file(self, name, total):
     sleep(10)
     with open('./generate_file/data/'+name+'.csv', 'w', newline='') as csvfile:
         spamwriter = csv.writer(csvfile, delimiter=' ',quotechar='|', quoting=csv.QUOTE_MINIMAL)

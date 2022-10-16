@@ -1,7 +1,7 @@
 from gc import callbacks
 from django.db import models
 
-from celerytask.tasks import  generate_csv
+from celerytask.tasks import  generate_file
 
 # Create your models here.
 
@@ -15,7 +15,7 @@ class Datas(models.Model):
         return self.file_name
 
     def save(self , *args, **kwargs):
-        id = generate_csv.apply_async(args=[self.file_name , self.count])
+        id = generate_file.apply_async(args=[self.file_name , self.count])
         self.celery_id = id.task_id
         self.status = id.status
         super(Datas, self).save(*args , **kwargs)
