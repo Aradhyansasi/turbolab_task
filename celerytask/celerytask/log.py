@@ -1,6 +1,6 @@
 import threading
-# from generate_file.models import Datas
 from generate_file.updater import status_updater
+
 def monitor_events(celery_app):
     """
     Calls Upadte function on every event occurences 

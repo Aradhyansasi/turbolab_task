@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 .csv
 migrations/__pycache__
+data/
